@@ -1,0 +1,11 @@
+version: "1"
+packages: 
+  - name: "db"
+    path: "./db/sqlc"
+    queries: "./db/query"
+    schema: "./db/migration"
+    engine: "postgresql"
+    emit_json_tags: true 
+    emit_prepared_queries: false # don't need performance yet. should update later
+    emit_interface: false # useful when mock for testing 
+    emit_exact_table_names: false # if true the table accounts => struct Accounts
